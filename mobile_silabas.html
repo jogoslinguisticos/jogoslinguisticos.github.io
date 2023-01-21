@@ -1,11 +1,13 @@
-<html>
+<html lang="pt">
     <head>
         <meta charset="utf-8">
-        <title>desafio das sílabas</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="height=device-height, initial-scale=1">
+        <meta name="description" content="Jogos linguísticos para todas as idades">
+        <meta name="keywords" content="língua portuguesa, jogos, sílabas">
+        <meta name="author" content="Tiago Bentivoglio">
         <link rel="stylesheet" href="estilo_mobile.css">
-        <meta name="keywords" content="jogo, língua portuguesa, sílabas">
-        <meta name="description" content="Jogo de separação de sílabas">
+        <link rel="manifest" href="manifest.json">
 
     </head>
     <body>
@@ -14,17 +16,12 @@
                 <tr>
                     <td class="titulo" colspan="2" style="border-bottom: 2px solid var(--cinza)">silabário</td>
                 </tr>
-                <tr id="counter_row">
-                    <td id="counter_cell"><div id="counter">tempo: 60 s</div></td>
-                    <td id="counter_starter_cell" style="padding: 2%;"><button id="counter_starter" onclick="iniciar_jogo()">iniciar!</button></td>
-                </tr>
+
                 <tr>
                     <td colspan="2"><output id="palavra_aleatoria" spellcheck="false">&nbsp;</output></td>
                 </tr>
 
-                <tr>
-                    <td colspan="2" style="padding: 2%;"><button id="botao_jogo_silabador" onclick="nova_palavra()">próxima palavra</button></td>
-                </tr>
+
             </table>
 
             <table id="opcoes_silabas_jogo">
@@ -50,8 +47,18 @@
                 <tr>
                     <td colspan="5"><p id="gabarito" spellcheck="false">&nbsp;</p></td>
                 </tr>
+                <tr>
+                    <td colspan="5" style="padding-bottom: 4%; text-align:center;"><button id="botao_jogo_silabador" onclick="nova_palavra()">próxima palavra</button></td>
+
+                </tr>
             </table>
-            <table id="tabela_placar" style="border-top: 1px solid var(--cinza); border-bottom: 1px solid var(--cinza)">
+            <table id="tabela_placar">
+                <tr id="counter_row_silabas">
+                    <td id="counter_cell_silabas"><div id="counter_silabas">tempo: 60 s</div></td>
+                    <td id="counter_starter_cell_silabas" style="padding-bottom: 2%;"><button id="counter_starter_silabas" onclick="iniciar_jogo()">iniciar!</button></td>
+                </tr>
+            </table>
+            <table id="tabela_placar" style="border-top: 1px solid var(--cinza)">
                 <tr>
                     <td  style="width: 50%"><div id="acertos">Acertos: 0</div></td>
                     <td  style="width: 50%"><div id="erros">Erros: 0</div></td>
@@ -60,7 +67,7 @@
             </table>
         </div>
         <div id="barra_inferior">
-            <button class="botoes_inferiores" onclick="location.href='index.html'" id="voltar_button">&#10229;</button>
+            <button class="botoes_inferiores" onclick="location.href='index.html'" id="voltar_button">voltar</button>
             <button class="botoes_inferiores" onclick="location.href='regras_silabas.html'" id="regras_button">regras</button>
             <button class="botoes_inferiores" id="novo_jogo_button" onclick="novo_jovo()">nova partida</button>
 

@@ -80,6 +80,7 @@ window.onload = function () {
     for (let i=0; i < lista_silabas_rodada.length; i++) {
 
         let lista_combinacoes = getCombinations(lista_silabas_possiveis)
+        console.log(lista_combinacoes.length)
 
         lista_combinacoes.forEach(element => {
     
@@ -210,7 +211,7 @@ function checar() {
 
         document.getElementById("acertos_cell").innerHTML = 'Encontradas: <mark>'+acertos+'</mark>'
 
-        console.log(dados_palavra)
+        
 
         if (dados_palavra['Classe'].length === 1) {
 
@@ -228,7 +229,7 @@ function checar() {
             
         } else if (dados_palavra['Classe'].length > 1) {
 
-            console.log("mais de uma possibilidade")
+            
 
             document.getElementById("status").innerHTML = 'Correto! <mark>'+palavra_resultante+'</mark> pode ser '+dados_palavra['Classe'].join(" ou ")
 
@@ -363,7 +364,6 @@ function pedir_dica() {
 
     let uma_dica = dicas_possiveis[Math.floor(Math.random() * dicas_possiveis.length)];
 
-    console.log(uma_dica)
 
     dicas_possiveis.splice(dicas_possiveis.indexOf(uma_dica), 1)
 
@@ -431,7 +431,6 @@ function gerar_silabas() {
 
     //total_silabas = Array.from(new Set(total_silabas))
 
-    console.log(total_silabas)
 
 }
 

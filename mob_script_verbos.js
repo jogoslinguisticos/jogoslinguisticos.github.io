@@ -101,40 +101,40 @@ function responder(bla) {
 
 
     if(bla.id === 'presente indicativo') {
-        bla.style= "background-color: var(--destaque); ; font-size:1.4em"
-        document.getElementById("passado indicativo").style = " background-color: var(--amarelo_escuro1); font-size:1em"
-        document.getElementById("futuro indicativo").style = " background-color: var(--amarelo_escuro1); font-size:1em"
+        bla.style= "background-color: var(--destaque); ; font-size:1em"
+        document.getElementById("passado indicativo").style = " background-color: var(--amarelo_escuro1); font-size:0.8em"
+        document.getElementById("futuro indicativo").style = " background-color: var(--amarelo_escuro1); font-size:0.8em"
 
     }
 
     if(bla.id === "pretérito imperfeito indicativo") {
-        bla.style = "background-color: var(--destaque); font-size: 1em"
-        document.getElementById("pretérito perfeito indicativo").style = "background-color: var(--amarelo_escuro1); font-size: 1em"
-        document.getElementById("pretérito mais-que-perfeito indicativo").style = "background-color: var(--amarelo_escuro1); font-size: 1em"
+        bla.style = "background-color: var(--destaque); font-size: 0.8em"
+        document.getElementById("pretérito perfeito indicativo").style = "background-color: var(--amarelo_escuro1); font-size: 0.8em"
+        document.getElementById("pretérito mais-que-perfeito indicativo").style = "background-color: var(--amarelo_escuro1); font-size: 0.8em"
     }
 
     if(bla.id === "pretérito perfeito indicativo") {
-        bla.style = "background-color: var(--destaque); font-size: 1em"
-        document.getElementById("pretérito imperfeito indicativo").style = "background-color: var(--amarelo_escuro1); font-size: 1em"
-        document.getElementById("pretérito mais-que-perfeito indicativo").style = "background-color: var(--amarelo_escuro1); font-size: 1em"
+        bla.style = "background-color: var(--destaque); font-size: 0.8em"
+        document.getElementById("pretérito imperfeito indicativo").style = "background-color: var(--amarelo_escuro1); font-size: 0.8em"
+        document.getElementById("pretérito mais-que-perfeito indicativo").style = "background-color: var(--amarelo_escuro1); font-size: 0.8em"
     }
 
     if(bla.id === "pretérito mais-que-perfeito indicativo") {
-        bla.style = "background-color: var(--destaque); font-size: 1em"
-        document.getElementById("pretérito imperfeito indicativo").style = "background-color: var(--amarelo_escuro2); font-size: 1em"
-        document.getElementById("pretérito perfeito indicativo").style = "background-color: var(--amarelo_escuro2); font-size: 1em"
+        bla.style = "background-color: var(--destaque); font-size: 0.8em"
+        document.getElementById("pretérito imperfeito indicativo").style = "background-color: var(--amarelo_escuro2); font-size: 0.8em"
+        document.getElementById("pretérito perfeito indicativo").style = "background-color: var(--amarelo_escuro2); font-size: 0.8em"
     }
 
     if(bla.id === "futuro do presente indicativo") {
         
-        bla.style = "background-color: var(--destaque); font-size: 1em"
-        document.getElementById("futuro do pretérito indicativo").style = "background-color: var(--amarelo_escuro2); font-size: 1em"
+        bla.style = "background-color: var(--destaque); font-size: 0.8em"
+        document.getElementById("futuro do pretérito indicativo").style = "background-color: var(--amarelo_escuro2); font-size: 0.8em"
         
     }
 
     if(bla.id === "futuro do pretérito indicativo") {
-        bla.style = "background-color: var(--destaque); font-size: 1em"
-        document.getElementById("futuro do presente indicativo").style = "background-color: var(--amarelo_escuro2); font-size: 1em"
+        bla.style = "background-color: var(--destaque); font-size: 0.8em"
+        document.getElementById("futuro do presente indicativo").style = "background-color: var(--amarelo_escuro2); font-size: 0.8em"
         
     }
 
@@ -145,25 +145,25 @@ function responder(bla) {
     }
 
     if(bla.id === "presente subjuntivo") {
-        bla.style = "background-color: var(--destaque);; font-size:1.4em"
-        document.getElementById("pretérito imperfeito subjuntivo").style = "background-color: var(--amarelo_escuro1); font-size:1em"
-        document.getElementById("futuro subjuntivo").style = "background-color: var(--amarelo_escuro1); font-size:1em"
+        bla.style = "background-color: var(--destaque);; font-size:1em"
+        document.getElementById("pretérito imperfeito subjuntivo").style = "background-color: var(--amarelo_escuro1); font-size:0.8em"
+        document.getElementById("futuro subjuntivo").style = "background-color: var(--amarelo_escuro1); font-size:0.8em"
     }
 
     if(bla.id === "futuro subjuntivo") {
-        bla.style = "background-color: var(--destaque); font-size:1.4em"
-        document.getElementById("presente subjuntivo").style = "background-color: var(--amarelo_escuro1); font-size:1em"
-        document.getElementById("pretérito imperfeito subjuntivo").style = "background-color: var(--amarelo_escuro1); font-size:1em"
+        bla.style = "background-color: var(--destaque); font-size:1em"
+        document.getElementById("presente subjuntivo").style = "background-color: var(--amarelo_escuro1); font-size:0.8em"
+        document.getElementById("pretérito imperfeito subjuntivo").style = "background-color: var(--amarelo_escuro1); font-size:0.8em"
     }
 
     if(bla.id === "positivo imperativo") {
-        bla.style = "background-color: var(--destaque); font-size:1.4em"
-        document.getElementById("negativo imperativo").style = "background-color: var(--amarelo_escuro1); font-size:1em"
+        bla.style = "background-color: var(--destaque); font-size:1em"
+        document.getElementById("negativo imperativo").style = "background-color: var(--amarelo_escuro1); font-size:0.8em"
     }
 
     if(bla.id === "negativo imperativo") {
-        bla.style = "background-color: var(--destaque); font-size:1.4em"
-        document.getElementById("positivo imperativo").style = "background-color: var(--amarelo_escuro1); font-size:1em"
+        bla.style = "background-color: var(--destaque); font-size:1em"
+        document.getElementById("positivo imperativo").style = "background-color: var(--amarelo_escuro1); font-size:0.8em"
     }
 
     let ultimo = document.getElementById("container_maior")
@@ -208,9 +208,9 @@ function modo_indicativo() {
     
 
 
-    document.getElementById("modo_indicativo").style = "font-size: 1.4em; background-color: var(--destaque)"
-    document.getElementById("modo_subjuntivo").style = "font-size: 1em"
-    document.getElementById("modo_imperativo").style = "font-size: 1em"
+    document.getElementById("modo_indicativo").style = "font-size: 1em; background-color: var(--destaque)"
+    document.getElementById("modo_subjuntivo").style = "font-size: 0.8em"
+    document.getElementById("modo_imperativo").style = "font-size: 0.8em"
 
 
 };
@@ -220,12 +220,12 @@ function passado_ind() {
 
     limpar_nivel()
     limpar_resultado()
-    document.getElementById("parte_principal").insertAdjacentHTML('afterend', '<div id="parte_especifica"><div class="div_botao"><button class="botao_temposverbais_especifica" id="pretérito imperfeito indicativo" onclick="responder(this)" style="font-size: 1em;">imperfeito</button></div><div class="div_botao"><button class="botao_temposverbais_especifica" id="pretérito perfeito indicativo" onclick="responder(this)" style="font-size: 1em;">perfeito</button></div><div class="div_botao"><button class="botao_temposverbais_especifica" id="pretérito mais-que-perfeito indicativo" onclick="responder(this)" style="font-size: 1em;">mais que perfeito</button></div></div></div>')
+    document.getElementById("parte_principal").insertAdjacentHTML('afterend', '<div id="parte_especifica"><div class="div_botao"><button class="botao_temposverbais_especifica" id="pretérito imperfeito indicativo" onclick="responder(this)" style="font-size: 0.8em;">imperfeito</button></div><div class="div_botao"><button class="botao_temposverbais_especifica" id="pretérito perfeito indicativo" onclick="responder(this)" style="font-size: 0.8em;">perfeito</button></div><div class="div_botao"><button class="botao_temposverbais_especifica" id="pretérito mais-que-perfeito indicativo" onclick="responder(this)" style="font-size: 0.8em;">mais que perfeito</button></div></div></div>')
 
     
-    document.getElementById("passado indicativo").style = " background-color: var(--destaque); font-size:1.4em"
-    document.getElementById("futuro indicativo").style = " background-color: var(--amarelo_escuro1); font-size:1em"
-    document.getElementById("presente indicativo").style = " background-color: var(--amarelo_escuro1); font-size:1em"
+    document.getElementById("passado indicativo").style = " background-color: var(--destaque); font-size:1em"
+    document.getElementById("futuro indicativo").style = " background-color: var(--amarelo_escuro1); font-size:0.8em"
+    document.getElementById("presente indicativo").style = " background-color: var(--amarelo_escuro1); font-size:0.8em"
     
 }
 
@@ -233,12 +233,12 @@ function futuro_ind() {
 
     limpar_nivel()
     limpar_resultado()
-    document.getElementById("parte_principal").insertAdjacentHTML('afterend', '<div id="parte_especifica"><div class="div_botao"><button class="botao_temposverbais_especifica" id="futuro do pretérito indicativo" onclick="responder(this)" style="font-size: 1em;">do passado</button></div><div class="div_botao"><button class="botao_temposverbais_especifica" id="futuro do presente indicativo" onclick="responder(this)" style="font-size: 1em;">do presente</button></div></div></div>')
+    document.getElementById("parte_principal").insertAdjacentHTML('afterend', '<div id="parte_especifica"><div class="div_botao"><button class="botao_temposverbais_especifica" id="futuro do pretérito indicativo" onclick="responder(this)" style="font-size: 0.8em;">do passado</button></div><div class="div_botao"><button class="botao_temposverbais_especifica" id="futuro do presente indicativo" onclick="responder(this)" style="font-size: 0.8em;">do presente</button></div></div></div>')
     document.getElementById("parte_especifica").style = "width: 75%;"
 
-    document.getElementById("futuro indicativo").style = " background-color: var(--destaque); font-size:1.4em"
-    document.getElementById("passado indicativo").style = " background-color: var(--amarelo_escuro1); font-size:1em"
-    document.getElementById("presente indicativo").style = " background-color: var(--amarelo_escuro1); font-size:1em"
+    document.getElementById("futuro indicativo").style = " background-color: var(--destaque); font-size:1em"
+    document.getElementById("passado indicativo").style = " background-color: var(--amarelo_escuro1); font-size:0.8em"
+    document.getElementById("presente indicativo").style = " background-color: var(--amarelo_escuro1); font-size:0.8em"
     
 }
 
@@ -250,9 +250,9 @@ function modo_subjuntivo() {
 
     document.getElementById("barra_modos").insertAdjacentHTML('afterend', '<div id="parte_principal"><div class="div_botao"><button class="botao_temposverbais_principal" id="pretérito imperfeito subjuntivo" onclick="responder(this)">passado</button></div><div class="div_botao"><button class="botao_temposverbais_principal" id="presente subjuntivo" onclick="responder(this)">presente</button></div><div class="div_botao"><button class="botao_temposverbais_principal" id="futuro subjuntivo" onclick="responder(this)">futuro</button></div></div>')
     
-    document.getElementById("modo_indicativo").style = "font-size: 1em"
-    document.getElementById("modo_subjuntivo").style = "font-size: 1.4em; background-color: var(--destaque)"
-    document.getElementById("modo_imperativo").style = "font-size: 1em"
+    document.getElementById("modo_indicativo").style = "font-size: 0.8em"
+    document.getElementById("modo_subjuntivo").style = "font-size: 1em; background-color: var(--destaque)"
+    document.getElementById("modo_imperativo").style = "font-size: 0.8em"
 
 };
  
@@ -264,9 +264,9 @@ function modo_imperativo() {
     document.getElementById("barra_modos").insertAdjacentHTML('afterend', '<div id="parte_principal"><div class="div_botao"><button class="botao_temposverbais_principal" id="negativo imperativo" onclick="responder(this)">negativo</button></div><div class="div_botao"><button class="botao_temposverbais_principal" id="positivo imperativo" onclick="responder(this)">positivo</button></div></div>')
     document.getElementById("parte_principal").style = "width: 75%;"
     
-    document.getElementById("modo_indicativo").style = "font-size: 1em"
-    document.getElementById("modo_subjuntivo").style = "font-size: 1em"
-    document.getElementById("modo_imperativo").style = "font-size: 1.4em; background-color: var(--destaque)"
+    document.getElementById("modo_indicativo").style = "font-size: 0.8em"
+    document.getElementById("modo_subjuntivo").style = "font-size: 0.8em"
+    document.getElementById("modo_imperativo").style = "font-size: 1em; background-color: var(--destaque)"
 
 };
 

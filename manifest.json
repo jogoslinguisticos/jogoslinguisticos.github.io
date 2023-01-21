@@ -1,8 +1,14 @@
 {
     "name": "Jogos Linguísticos",
-    "icons": "icone_girafa.png",
+    "icons": [
+            {
+                "src": "icone_girafa.png",
+                "type": "image/png",
+                "sizes": "512x512"
+            }
+    ],
     "orientation": "portrait",
     "display": "fullscreen",
-    "id": "/?source=pwa",
-    "start_url": "/?source=pwa"
+    "scope": "https://jogoslinguisticos.github.io/",
+    "start_url": "https://jogoslinguisticos.github.io/index.html"
 }

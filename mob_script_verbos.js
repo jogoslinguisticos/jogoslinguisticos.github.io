@@ -12,9 +12,13 @@ let altura = document.documentElement.clientHeight;
 console.log('largura: '+largura)
 console.log('altura: '+altura)
 
+document.getElementById("counter_starter").addEventListener("click", iniciar_jogo)
+
 
 //Função que faz a contagem de tempo
 function iniciar_jogo() {
+    
+    document.getElementById("counter_starter").removeEventListener("click", iniciar_jogo)
 
     clearInterval(intervalo)
 
@@ -47,6 +51,8 @@ function iniciar_jogo() {
 
 
         } else if (tempo < 0) {
+            
+            document.getElementById("botao_jogo_verbos").setAttribute('disabled', 'disabled')
 
             clearInterval(intervalo)
 

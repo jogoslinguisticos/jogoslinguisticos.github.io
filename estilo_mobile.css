@@ -41,13 +41,6 @@ body {
     }
 }
 
-@keyframes brilho {
-    from {
-        /*text-shadow: 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza);*/
-    } to {
-        text-shadow: 0 0 0px var(--amarelo), 0 0 0.5px var(--amarelo), 0 0 1px var(--amarelo), 0 0 1.5px var(--amarelo), 0 0 2px var(--amarelo), 0 0 2.5px var(--amarelo), 0 0 3px var(--amarelo);
-    }
-}
 
 #principal {
     width: 100%;
@@ -125,14 +118,12 @@ mark {
 
 #logo_cell {
     text-align: center;
-    font-weight: bold;
+    
     color: var(--cinza);    
 }
 
 .logo{
     font-size:35vw;
-    animation: brilho 3s ease-in-out infinite alternate;
-    
 }
 
 .titulo{

@@ -52,11 +52,13 @@ function separarSilabas() {
     var imprimir = silabas.join(".");
     return imprimir
 };
- 
+
+document.getElementById("counter_starter_silabas").addEventListener("click", iniciar_jogo)
 
 //Função que faz a contagem de tempo
 function iniciar_jogo() {
 
+    document.getElementById("counter_starter_silabas").removeEventListener("click", iniciar_jogo)
     clearInterval(intervalo)
 
     document.getElementById("opcoes_silabas_jogo").style.visibility = "visible"
@@ -88,7 +90,7 @@ function iniciar_jogo() {
             document.getElementById("counter_silabas").innerHTML = '<mark>tempo: '+tempo+' s</mark>'
 
         } else if (tempo < 0) {
-
+            
             document.getElementById("botao_jogo_silabador").setAttribute('disabled', 'disabled')
 
             clearInterval(intervalo)

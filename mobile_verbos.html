@@ -1,44 +1,52 @@
-<html>
+<html lang="pt">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="height=device-height, initial-scale=1">
+        <meta name="description" content="Jogos linguísticos para todas as idades">
+        <meta name="keywords" content="língua portuguesa, jogos, pedagógico">
+        <meta name="author" content="Tiago Bentivoglio">
         <link rel="stylesheet" href="estilo_mobile.css">
+        <link rel="manifest" href="manifest.json">
 
     </head>
-    <body>
+    <body scroll="no">
         <div id="principal">
-            <table id="tabela_controle">
+            <table id="tabela_controle" >
                 <tr>
                     <td class="titulo" colspan="2" style="border-bottom: 2px solid var(--cinza)">verboso</td>
                 </tr>
-                <tr id="counter_row">
-                    <td id="counter_cell"><div id="counter">tempo: 60 s</div></td>
-                    <td id="counter_starter_cell"><button id="counter_starter" onclick="iniciar_jogo()">iniciar!</button></td>
-                </tr>
-                <tr  style="line-height: 4.5em;">
+
+                <tr >
                     <td colspan="2"><output id="palavra_aleatoria_verbos" spellcheck="false">&nbsp;</output></td>
                 </tr>
-
-                <tr>
-                    <td colspan="2" style="padding: 2%"><button id="botao_jogo_verbos" onclick="gerar_verbo_aleatorio()" >novo verbo</button></td>
+                <tr >
+                    <td colspan="2" id="botao_jogo_verbos_cell"><button id="botao_jogo_verbos" onclick="gerar_verbo_aleatorio()" style="visibility: hidden;">novo verbo</button></td>
                 </tr>
 
-            </table>
-            <table id="tabela_formas_verbais">
-                <div id="container_maior">
 
-                </div>
-                
             </table>
-            <table id="placar_verbos" style="border-top: 1px solid var(--cinza);">
+            
+            <div id="container_maior">
+
+            </div>
+                
+            
+            <table id="placar_verbos" >
+
+                <tr id="counter_row" >
+                    <td id="counter_cell"><div id="counter">tempo: 60 s</div></td>
+                    <td id="counter_starter_cell"><button id="counter_starter" onclick="iniciar_jogo()" style="margin-bottom: 4%">iniciar!</button></td>
+                </tr>
+
                 <tr>
-                    <td id="acertos_verbos" colspan="2">Acertos: 0</td><td id="erros_verbos" colspan="2">Erros: 0</td>
+                    <td id="acertos_verbos" >Acertos: 0</td><td id="erros_verbos" >Erros: 0</td>
                 </tr>
             </table>
 
         </div>
         <div id="barra_inferior">
-            <button class="botoes_inferiores" onclick="location.href='index.html'" id="voltar_button">&#10229;</button>
+            <button class="botoes_inferiores" onclick="location.href='index.html'" id="voltar_button">voltar</button>
             <button class="botoes_inferiores" onclick="location.href='regras_verbos.html'" id="regras_button">regras</button>
             <button class="botoes_inferiores" id="novo_jogo_button" onclick="novo_jovo()">nova partida</button>
         </div>

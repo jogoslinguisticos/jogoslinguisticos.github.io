@@ -30,17 +30,12 @@ body {
 }
 
 .star {
-  --twinkle-duration: "";
-  --twinkle-delay: "";
-  --star-size: "";
+
   position: absolute;
   width: var(--star-size);
   height: var(--star-size);
   background: var(--cinza);
   border-radius: 50%;
-  animation: twinkle infinite alternate;
-  animation-duration: var(--twinkle-duration);
-  animation-delay: var(--twinkle-delay);
   z-index: -1000;
 }
 

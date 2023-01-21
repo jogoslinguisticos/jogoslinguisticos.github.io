@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilo_mobile.css">
+
+    </head>
+    <body>
+        <div id="principal">
+            <table id="tabela_silabas_construcao">
+                <tr>
+                    <td class="titulo" colspan="2" style="border-bottom: 2px solid black">palavreado</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+
+                        <div id="destino">
+                            
+                        </div>
+
+                        <div id="origem">
+                                
+                            <div class="mover_square" draggable="true" id="square_1">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_2">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_3">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_4">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_5">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_6">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_7">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_8">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_9">&nbsp;&nbsp;</div>
+                            <div class="mover_square" draggable="true" id="square_10">&nbsp;&nbsp;</div>
+                                
+                        </div>
+                        
+                    </td>
+                </tr>
+            </table>
+            <table id="controles_construcao">
+                <tr>
+                    <td style="text-align: center; width: 33%; padding: 2%;" colspan="2"><button id="checar" onclick="checar()">checar</button></td><td style="width: 33%; padding: 2%" colspan="2"><button id="limpar" onclick="limpar()">limpar </button></td><td style="padding: 2%" colspan="2"><button id="dica" onclick="pedir_dica()">dica</button></td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="3" style="text-align: center;"><div id="possibilidades" >Possibilidades:&nbsp;&nbsp;&nbsp;</div></td><td colspan="3" style="text-align: center;"><div id="acertos_cell">Encontradas:&nbsp;&nbsp;</div></td>
+                </tr>
+    
+                <tr style="height: 100%">
+                    <td id="status" colspan="6" >&nbsp;</td>
+                </tr>
+ 
+
+            </table>
+
+                
+        </div>
+        <div id="barra_inferior">
+            <button class="botoes_inferiores" onclick="location.href='index.html'" id="voltar_button">&#10229;</button>
+            <button class="botoes_inferiores" onclick="location.href='regras_construcao.html'" id="regras_button">regras</button>
+            <button class="botoes_inferiores" id="novo_jogo_button" onclick="novo_jovo()">nova partida</button>
+
+        </div>
+
+        <script src="mob_script_construcao.js"></script>
+        <script src="base_mobile.js"></script>
+        
+    </body>
+</html>

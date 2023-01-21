@@ -1,0 +1,756 @@
+:root {
+    --roxo: #201c2f;
+    --azul: #100751;
+    --cinza: #E9FFF9;
+    --rosa: #D496A7;
+    --roxo_escuro: #111019;
+    --amarelo: #EDB458;
+    --destaque: #F3E2E7;
+    --amarelo_escuro1: #EAA434;
+    --amarelo_escuro2: #DE9217;
+}
+
+body {
+    
+    background: linear-gradient(to bottom, var(--roxo) 0%, var(--azul) 100%);
+    
+}
+
+.star {
+  --twinkle-duration: "";
+  --twinkle-delay: "";
+  --star-size: "";
+  position: absolute;
+  width: var(--star-size);
+  height: var(--star-size);
+  background: var(--cinza);
+  border-radius: 50%;
+  animation: twinkle infinite alternate;
+  animation-duration: var(--twinkle-duration);
+  animation-delay: var(--twinkle-delay);
+  z-index: -1000;
+}
+  
+@keyframes twinkle {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+        box-shadow: 0 0 5px 0.5px rgba(150, 150, 150, 0.6);
+    }
+}
+
+@keyframes brilho {
+    from {
+        /*text-shadow: 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza), 0 0 0px var(--cinza);*/
+    } to {
+        text-shadow: 0 0 0px var(--amarelo), 0 0 0.5px var(--amarelo), 0 0 1px var(--amarelo), 0 0 1.5px var(--amarelo), 0 0 2px var(--amarelo), 0 0 2.5px var(--amarelo), 0 0 3px var(--amarelo);
+    }
+}
+
+#principal {
+    width: 100%;
+    height: 90%;
+}
+
+mark {
+    background-color: var(--cinza);
+    color: var(--roxo);
+    font-weight: bolder;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0%;
+    border: 2px var(--roxo_escuro);
+    z-index: 1;
+}
+
+
+/*Barra inferior de controles*/
+#barra_inferior {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.botoes_inferiores {
+    height: 90%;
+    width: 30%;
+    font-size: 1.5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    line-height: 100%;
+
+    background-color:var(--rosa);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+    padding: 2%;
+
+}
+
+.botoes_inferiores:active{
+    transform: translate(2px, 2px);
+}
+
+#voltar_button {
+    font-size: 3em;
+}
+
+#novo_jogo_button {
+    font-size: 1.5em;
+}
+
+
+
+
+/*Página inicial*/
+
+#tabela_logo {
+    margin: auto;
+    width: 90%;
+    height: 30%;
+    table-layout: fixed;
+}
+
+#tabela_tela1 {
+    margin: auto;
+    width: 90%;
+    height: 70%;
+    table-layout: fixed;
+}
+
+#logo_cell {
+    text-align: center;
+    font-weight: bold;
+    color: var(--cinza);    
+}
+
+.logo{
+    font-size:35vw;
+    animation: brilho 3s ease-in-out infinite alternate;
+    
+}
+
+.titulo{
+    font-size: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight:800;
+    text-align: center;
+    color: var(--cinza);
+}
+
+.nomes_jogos {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bolder;
+    padding: 5%;
+    width: 100%;
+    height: 100%;
+    background-color:var(--rosa);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    max-height: 3em;
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+.nomes_jogos:active {
+    transform: translate(2px, 2px);
+}
+
+#creditos {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 3%;
+    text-align: center;
+    color: var(--cinza);
+}
+
+
+
+
+/*Jogo das sílabas*/
+
+#tabela_silabas {
+    margin: auto;
+    width: 100%;
+    height: 45%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: var(--cinza);
+}
+
+#tabela_placar {
+    height: 7%;
+    margin: auto;
+    width: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--cinza);
+}
+
+#counter_cell {
+    width: 70%;
+    text-align: center;
+}
+
+#counter_starter-cell {
+    width: 30%;
+    
+}
+
+#counter{
+    font-size: x-large;
+    
+    text-align: right;
+    width: 100%;
+}
+
+#counter_starter{
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    background-color:var(--amarelo);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+#counter_starter:active {
+    transform: translate(2px, 2px);
+}
+
+#palavra_aleatoria {
+    font-size: 2.5em;
+    font-weight: bold;
+    
+}
+
+#pergunta_jogo_silabador{
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+#botao_jogo_silabador{
+    width: 80%;
+    height: fit-content;
+    font-size: 1.7em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color:var(--rosa);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+#botao_jogo_silabador:active {
+    transform: translate(2px, 2px);
+}
+
+#acertos{
+    text-align: center;
+    margin: auto;
+    
+}
+
+#erros {
+    text-align: center;
+    margin: auto;
+    
+}
+
+#opcoes_silabas_jogo{
+    width: 100%;
+    height: 20%;
+    table-layout: fixed;
+}
+
+#tabela_resultado_gabarito{
+    width: 100%;
+    height: 20%;
+    table-layout: fixed;
+}
+
+.numero {
+    height: 100%;
+    width: 100%;
+    font-size: 2.2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    background-color:var(--amarelo);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+.numero:active {
+    transform: translate(2px, 2px);
+}
+
+#resultado {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--cinza);
+}
+
+#gabarito {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.7em;
+    text-align: center;
+    color: var(--cinza);
+}
+
+/*Jogos das sílabas - REGRAS*/
+
+#tabela_silabas_regras {
+    margin: auto;
+    width: 100%;
+    height: 70%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+    table-layout: fixed;
+    color: var(--cinza);
+}
+
+
+
+
+/*Jogo da construção*/
+
+#tabela_silabas_construcao {
+    width: 100%;
+    height: 60%;
+}
+
+#destino {
+    flex-basis: 100%;
+    flex-grow: 1;
+    padding: 2%;
+    order: -1;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    
+    min-height: 5em;
+    border: 2px solid var(--cinza);
+    align-items: center;
+    
+}
+
+#origem {
+    flex-basis: 100%;
+    flex-grow: 1;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    min-height: 14.5em;
+    flex-wrap: wrap;
+}
+
+.mover_square{
+    position:unset;
+    padding: 2%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    border: 2px dashed var(--azul);
+    background-color: var(--amarelo);
+    color: var(--roxo);
+    height: fit-content;
+    margin: 1%;
+}
+
+
+#controles_construcao{
+    table-layout: fixed;
+    width: 100%;
+    height: 40%;
+}
+
+#checar {
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    width: 100%;
+    height: 100%;
+    background-color:var(--rosa);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+    
+}
+
+#checar:active{
+
+    transform: translate(2px, 2px);
+    
+}
+
+#limpar {
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    width: 100%;
+    height: 100%;
+    
+    background-color:var(--rosa);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+
+}
+
+#limpar:active {
+    transform: translate(2px, 2px);
+}
+
+#dica {
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    width: 100%;
+    height: 100%;
+    background-color:var(--rosa);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+#dica:active {
+    transform: translate(2px, 2px);
+}
+
+#possibilidades {
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px var(--cinza);
+    color: var(--cinza);
+    text-align: center;
+    
+}
+
+#acertos_cell {
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--cinza);
+    text-align: center;
+    
+}
+
+#status {
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--cinza);
+    text-align: center;
+    
+}
+
+
+/*Desafio dos verbos*/
+
+#tabela_controle {
+    margin: auto;
+    width: 100%;
+    height: 35%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: var(--cinza);
+    margin-bottom: 2%;
+}
+
+#tabela_formas_verbais {
+    table-layout: fixed;
+    margin: auto;
+    width: 100%;
+    height:40%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: var(--cinza);
+    padding-bottom: 3%;
+    overflow: hidden;
+    
+}
+
+#placar_verbos{
+    table-layout: fixed;
+    margin: auto;
+    width: 100%;
+    height: 10%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: var(--cinza);
+    padding-bottom: 3%;
+    overflow: hidden;
+}
+
+#palavra_aleatoria_verbos {
+    font-size: 2em;
+    font-weight: bold;
+    
+}
+
+#botao_jogo_verbos {
+    width: 50%;
+    height: 100%;
+    font-size: 1.5em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    background-color:var(--rosa);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+#botao_jogo_verbos:active {
+    transform: translate(2px, 2px);
+}
+
+
+
+
+.botao_temposverbais {
+    width:100%;
+    height: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color:var(--amarelo);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+.botao_temposverbais:active {
+    transform: translate(2px, 2px);
+}
+
+.botao_temposverbais_principal {
+    width:100%;
+    height: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color:var(--amarelo_escuro1);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+.botao_temposverbais_principal:active {
+    transform: translate(2px, 2px);
+}
+.botao_temposverbais_especifica {
+    width:100%;
+    height: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color:var(--amarelo_escuro2);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 0.5px 0.5px 0px 0px var(--cinza), 1px 1px 0px 0px var(--cinza), 1.5px 1.5px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 2.5px 2.5px 0px 0px var(--cinza);
+}
+
+.botao_temposverbais_especifica:active {
+    transform: translate(2px, 2px);
+}
+
+
+#container_maior {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+}
+
+#barra_modos {
+    width: 98%;
+    height: 30%;
+    border: 4px dashed var(--cinza);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#parte_principal {
+    width: 96%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+    border-bottom: 2px dashed var(--cinza);
+    border-right: 2px dashed var(--cinza);
+    border-left: 2px dashed var(--cinza);
+    
+}
+
+
+#parte_especifica {
+    width: 93%;
+    height: 20%;
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px dotted var(--cinza);
+    border-right: 1px dotted var(--cinza);
+    border-left: 1px dotted var(--cinza);
+}
+
+.div_botao_modos {
+    width: fit-content;
+    height: 50%;
+    display: flex;
+}
+
+.div_botao {
+    width: fit-content;
+    height: 50%;
+}
+
+#resposta_parcial {
+    width: 50%;
+    height: 100%;
+    font-size: 1em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    background-color:var(--cinza);
+    color: var(--roxo);
+    z-index: 1;
+    border: 2px solid var(--roxo);
+    box-shadow: 1px 1px 0px 0px var(--cinza), 2px 2px 0px 0px var(--cinza), 3px 3px 0px 0px var(--cinza), 4px 4px 0px 0px var(--cinza), 5px 5px 0px 0px var(--cinza);
+}
+
+#resposta_parcial:active {
+    transform: translate(2px, 2px);
+}
+
+#tabela_opcoes {
+    width: 100%;
+    height: 7%;
+    text-align: center;
+}
+
+#instrucao_jogo_verbos {
+    font-size: 1.3em;
+}
+
+#acertos_verbos {
+    text-align: center;
+    margin: auto;
+    font-size: 1.3em;
+    
+}
+
+.row_conjugador {
+    padding: 2%;
+}
+
+#erros_verbos {
+    text-align: center;
+    margin: auto;
+    font-size: 1.3em;
+}
+
+#resultado_final {
+    color: var(--cinza);
+    width: fit-content;
+    font-size: 2em;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    align-self: center;
+    color: var(--cinza);
+    
+}
+
+#placar-verbos {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+
+}
+
+
+/*Adivinho*/
+
+#tabela_silabas_adivinho {
+    margin: auto;
+    width: 100%;
+    height: 30%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: var(--cinza);
+}
+
+.instrucoes {
+    font-size: 1.5em;
+}
+
+#tabela_blanks {
+    height: 10%;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    table-layout: fixed;
+    
+}
+
+#tabela_sugestoes{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: var(--cinza);
+    font-size: 1em; 
+}
+
+#row_blanks_letras {
+    border: none;
+}
+
+.blanks {
+    background-color: rgb(195, 204, 218);
+    border-bottom: 2px solid;
+    width: 100%;
+    height: 100%;
+    color: var(--roxo);
+    background-color: var(--amarelo);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 1em;
+}

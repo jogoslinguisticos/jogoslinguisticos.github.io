@@ -1,0 +1,8 @@
+{
+    "name": "Jogos Linguísticos",
+    "icons": "icone_girafa.png",
+    "orientation": "portrait",
+    "display": "fullscreen",
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa"
+}

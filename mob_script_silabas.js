@@ -59,6 +59,9 @@ function iniciar_jogo() {
 
     clearInterval(intervalo)
 
+    document.getElementById("opcoes_silabas_jogo").style.visibility = "visible"
+    document.getElementById("botao_jogo_silabador").style.visibility = "visible"
+
     var tempo = 60;
 
     //Limpar os acertos e erros anteriores
@@ -82,7 +85,7 @@ function iniciar_jogo() {
 
         if (tempo % 2 === 0) {
 
-            document.getElementById("counter").innerHTML = '<mark>tempo: '+tempo+' s</mark>'
+            document.getElementById("counter_silabas").innerHTML = '<mark>tempo: '+tempo+' s</mark>'
 
         } else if (tempo < 0) {
 
@@ -108,7 +111,7 @@ function iniciar_jogo() {
 
         } else {
             
-            document.getElementById("counter").innerHTML = "tempo: "+tempo+" s";
+            document.getElementById("counter_silabas").innerHTML = "tempo: "+tempo+" s";
 
         }
 

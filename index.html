@@ -43,5 +43,12 @@
         </table>
 
         <script src="mobile_index.js"></script>
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("serviceworker.js")
+                })
+            }
+        </script>
     </body>
 </html>

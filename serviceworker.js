@@ -5,13 +5,7 @@ importScripts(
 workbox.routing.registerRoute(
     /\.(?:css|js|html)$/,
     new workbox.strategies.StaleWhileRevalidate({
-        "cacheName": "motor",
-        plugins: [
-            new workbox.expiration.Plugin({
-                maxEntries: 500,
-                maxAgeSeconds: 604800
-            })
-        ]
+        "cacheName": "motor"
     })
 )
 

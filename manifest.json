@@ -8,6 +8,8 @@
             }
     ],
     "orientation": "portrait",
+    "theme_color": "#201c2f",
+    "background_color": "#201c2f",
     "display": "fullscreen",
     "scope": "https://jogoslinguisticos.github.io/",
     "start_url": "https://jogoslinguisticos.github.io/index.html"

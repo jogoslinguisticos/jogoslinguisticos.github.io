@@ -3,7 +3,7 @@ importScripts(
 );
 
 workbox.routing.registerRoute(
-    /\.(?:css|js)$/,
+    /\.(?:css|js|html)$/,
     new workbox.strategies.StaleWhileRevalidate({
         "cacheName": "motor",
         plugins: [

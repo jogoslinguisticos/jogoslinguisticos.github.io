@@ -2,6 +2,11 @@
     "name": "Jogos Linguísticos",
     "icons": [
             {
+                "src": "icone_girafa_preto_2.png",
+                "type":"image/png",
+                "sizes": "192x192"
+            },
+            {
                 "src": "icone_girafa.png",
                 "type": "image/png",
                 "sizes": "512x512"

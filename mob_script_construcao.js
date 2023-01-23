@@ -24,6 +24,24 @@ let lista_silabas_rodada = []
 
 pegar_dicas = lista_palavras_possiveis
 
+const processador = new Worker('./processador_palavreado.js')
+
+
+processador.onmessage = function(message) {
+
+    console.log('palavras possíveis / lista recebida: '+message.data)
+
+    message.data.forEach(ele => {
+
+        lista_palavras_possiveis.push(ele)
+        dicas_possiveis.push(ele)
+        console.log('palavra adicionada: '+ele)
+
+    })
+
+    document.getElementById("possibilidades").innerHTML = 'Possibilidades: <mark>'+lista_palavras_possiveis.length+'</mark>'
+
+}
 
 
 window.onload = function () {
@@ -75,44 +93,15 @@ window.onload = function () {
 
     lista_silabas_rodada = lista_silabas_possiveis
 
-    console.log('quantas silabas: '+lista_silabas_rodada.length)
+    //console.log('quantas silabas: '+lista_silabas_rodada.length)
 
-    for (let i=0; i < lista_silabas_rodada.length; i++) {
+    processador.postMessage(lista_silabas_rodada)
 
-        let lista_combinacoes = getCombinations(lista_silabas_possiveis)
-        console.log(lista_combinacoes.length)
+    console.log('mensagem enviada: '+lista_silabas_rodada.length)
 
-        lista_combinacoes.forEach(element => {
-    
-            let juncao_silabas = element.join("")
-    
-            if (base_palavras_mobile.find(i => i.palavra === juncao_silabas)) {
-                lista_palavras_possiveis.push(juncao_silabas)
-    
-            }
-    
-        })
-
-        let primeiro = lista_silabas_rodada.at(0)
-
-        lista_silabas_rodada.splice(lista_silabas_rodada.at(0), 1)
-
-        lista_silabas_rodada.push(primeiro)
-        
-    }
-
-    lista_palavras_possiveis = Array.from(new Set(lista_palavras_possiveis))
-
-
-    console.log('palavras possíveis: '+lista_palavras_possiveis)
-
-
-    lista_possiveis = lista_palavras_possiveis
-    dicas_possiveis = lista_palavras_possiveis
-
-    document.getElementById("possibilidades").innerHTML = 'Possibilidades: <mark>'+lista_palavras_possiveis.length+'</mark>'
 
 };
+
 
 
 

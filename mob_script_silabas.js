@@ -2,24 +2,12 @@
 
 
 //Variáveis globais
-var total_palavras = []
 var acertos = 0;
 var erros = 0;
 
 ///////////////////////
 ///////////////////////
 
-window.onload = function () {
-
-    
-    total_palavras = base_palavras_mobile.map(i => i.palavra)
-
-    //Tira palavras com parênteses
-    total_palavras = total_palavras.filter((j) => /(\(|\))/i.test(j) === false)
-
-    total_palavras = total_palavras.filter((k) => k !== 'undefined')
-
-}
 
 //Botão REFRESH
 function novo_jovo() {
@@ -53,13 +41,17 @@ function separarSilabas() {
     return imprimir
 };
 
+
 document.getElementById("counter_starter_silabas").addEventListener("click", iniciar_jogo)
 
 //Função que faz a contagem de tempo
 function iniciar_jogo() {
 
     document.getElementById("counter_starter_silabas").removeEventListener("click", iniciar_jogo)
+
     clearInterval(intervalo)
+
+    
 
     document.getElementById("opcoes_silabas_jogo").style.visibility = "visible"
     document.getElementById("botao_jogo_silabador").style.visibility = "visible"
@@ -80,8 +72,12 @@ function iniciar_jogo() {
     //Gera uma nova palavra para iniciar o jogo
     nova_palavra()
 
+    
+
     //Timer
     var intervalo = setInterval(() => {
+
+        
         
         tempo--;
 
@@ -89,8 +85,10 @@ function iniciar_jogo() {
 
             document.getElementById("counter_silabas").innerHTML = '<mark>tempo: '+tempo+' s</mark>'
 
-        } else if (tempo < 0) {
             
+
+        } else if (tempo < 0) {
+
             document.getElementById("botao_jogo_silabador").setAttribute('disabled', 'disabled')
 
             clearInterval(intervalo)
@@ -111,9 +109,13 @@ function iniciar_jogo() {
 
             document.getElementById("gabarito").innerHTML = 'Sua pontuação é <mark>'+pontuacao+'</mark>.'
 
+            
+
         } else {
             
             document.getElementById("counter_silabas").innerHTML = "tempo: "+tempo+" s";
+
+            
 
         }
 
@@ -150,14 +152,21 @@ function resultado_final(resposta, tamanho) {
     document.getElementById("gabarito").innerHTML = '<mark>'+gabarito+'</mark>';
 };
 
+let palavrador = new Worker('palavrador.js')
+
 function nova_palavra() {
 
-    let nova_palavra_aleatoria = total_palavras[Math.floor(Math.random() * total_palavras.length)];
+    palavrador.postMessage("palavra")
 
-    document.getElementById("palavra_aleatoria").innerHTML = nova_palavra_aleatoria;
+}
 
+palavrador.onmessage = function(message) {
+
+    document.getElementById("palavra_aleatoria").innerHTML = message.data;
+    
     document.getElementById("resultado").innerHTML = "&nbsp;"
     document.getElementById("gabarito").innerHTML = "&nbsp;"
+
 }
 
 //Botões de números

@@ -4,7 +4,8 @@
             {
                 "src": "icone_girafa_preto_192.png",
                 "type":"image/png",
-                "sizes": "192x192"
+                "sizes": "192x192",
+                "purpose": "any maskable"
             },
             {
                 "src": "icone_girafa.png",
@@ -14,8 +15,7 @@
             {
                 "src": "icone_mask.png",
                 "sizes": "512x512",
-                "type":"image/png",
-                "purpose": "any maskable"
+                "type":"image/png"
             }
     ],
     "orientation": "portrait",

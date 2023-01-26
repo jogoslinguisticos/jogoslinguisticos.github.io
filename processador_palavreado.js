@@ -1,40 +1,61 @@
 
 
-//let base_palavras_mobile = base_raw.then()
+
 
 onmessage = function(message) {
 
     fetch('./base_mobile_2.json').then((resp) => {return resp.json()}).then((a) => {
+
+        let verificadas = 0;
     
         let base_palavras_mobile = a.map(i => i.palavra)
 
-        console.log(base_palavras_mobile.at(150))
-
         lista_palavras_possiveis = []
 
+        let lista_menor = []
+        
+        message.data.forEach(ele => {
 
+            let tamanho_ele = ele.length
+            let parcial = base_palavras_mobile.filter(i => i.slice(0, tamanho_ele) === ele)
 
-        let lista_combinacoes = getCombinations(message.data)
-            
+            parcial.forEach(j => {
+                lista_menor.push(j)
+            })
 
-        lista_combinacoes.forEach(element => {
-        
-            let juncao_silabas = element.join("")
-        
-            if (base_palavras_mobile.find(i => i === juncao_silabas)) {
-                lista_palavras_possiveis.push(juncao_silabas)
-        
-            }
-        
         })
 
-        let primeiro = message.data.at(0)
+        for (i = 0; i < message.data.length; i ++) {
 
-        message.data.splice(message.data.at(0), 1)
+            let lista_combinacoes = combinar(message.data)
+            
+            lista_combinacoes.forEach(element => {
+    
+                verificadas +=1;
+            
+                //let juncao_silabas = element.join("")
+            
+                if (lista_menor.find(i => i === element)) {
+    
+                    lista_palavras_possiveis.push(element)
+            
+                }
+            
+            })
+    
+            let primeiro = message.data.at(0)
+    
+            message.data.splice(message.data.at(0), 1)
+    
+            message.data.push(primeiro)
 
-        message.data.push(primeiro)
+        }
+
+
 
         lista_palavras_possiveis = Array.from(new Set(lista_palavras_possiveis))
+
+        console.log(verificadas)
 
         postMessage(lista_palavras_possiveis)
     
@@ -43,31 +64,19 @@ onmessage = function(message) {
 }
 
 
-function getCombinations(lista) {
-
-    var combi = [];
-    var temp = [];
-    var slent = Math.pow(2, lista.length);
-
-    for (var i = 0; i < slent; i++)
-    {
-        temp = [];
-        for (var j = 0; j < lista.length; j++)
-        {
-            if ((i & Math.pow(2, j)))
-            {
-                temp.push(lista[j]);
-            }
-        }
-        if (temp.length > 0)
-        {
-            combi.push(temp);
-        }
-
+function combinar(lista) {
+    const combine = (sub, ind) => {
+        let result = []
+        let i, l, p;
+        for (i = ind, l = lista.length; i < l; i++) {
+           p = sub.slice(0);
+           p.push(lista[i]);
+           result = result.concat(combine(p, i + 1));
+           result.push(p.join(''));
+        };
+        return result;
     }
-
-    combi.sort((a, b) => a.length - b.length);
-    
-    return combi;
-
+    return combine([], 0);
 }
+
+

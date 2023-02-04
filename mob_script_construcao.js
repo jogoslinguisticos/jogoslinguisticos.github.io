@@ -200,6 +200,8 @@ function checar() {
             acertos += 1;
             
             let dados_palavra = tratar_dados(dados)
+            
+            console.log(dados_palavra)
 
 
             document.getElementById("acertos_cell").innerHTML = 'Encontradas: <mark>'+acertos+'</mark>'

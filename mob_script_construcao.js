@@ -190,12 +190,12 @@ function checar() {
 
         let lista_palavras_total = Object.keys(a)
 
-            //Checar se existe
+        //Checar se existe
         if (lista_palavras_total.includes(palavra_resultante) && palavras_corretas.includes(palavra_resultante) === false) {
 
             palavras_corretas.push(palavra_resultante)
 
-            let dados = base_palavras_mobile.find(i => i.palavra === palavra_resultante)
+            let dados = a.palavra_resultante
 
             acertos += 1;
             
@@ -261,56 +261,36 @@ function tratar_dados(dados) {
         'Número': []
     }
 
-    if (dados.includes('v.')) {
+    if (/\badj\./.test(dados)) {
+               dados_palavra['Classe'].push('adjetivo')
 
-        dados_palavra['Classe'].push('verbo')
+            } else if (/\bs\./.test(dados)) {
+                dados_palavra['Classe'].push('substantivo')
 
-    } 
-    if (dados.includes('a.') | dados.includes('a2g.') | dados.includes('a2g. s2g.') | dados.includes('a2g2n.') | dados.includes('a. sm.') | dados.includes('s2g. a2g.') | dados.includes('sm. a.') | dados.includes('a.sm.') | dados.includes('a2g.s2g.') | dados.includes('a2g. sm.') | dados.includes('a2g. s2g. sf.') | dados.includes('a2g') | dados.includes('A2g.') | dados.includes('a2g. a.') | dados.includes('a2g. adv.') | dados.includes('a2g2n. sm2n.') | dados.includes('a2g. s2g. sm.') | dados.includes('a2g2n. s2g.2n.') | dados.includes('s2g2n. a2g2n.')) {
+            } else if (/\bv\./.test(dados)) {
+                dados_palavra['Classe'].push('verbo')
+                
+            } else if (/\badv\./.test(dados)) {
+                dados_palavra['Classe'].push('advérbio')
+        
+            } else if (/\bnum\./.test(dados)) {
+                dados_palavra['Classe'].push('numeral')
+        
+            } else if (/\bpron\./.test(dados)) {
+                dados_palavra['Classe'].push('pronome')
 
-        dados_palavra['Classe'].push('adjetivo')
-
-    } 
-    if (dados.includes('sm.') | dados.includes('sf.') | dados.includes('s2g.') | dados.includes('a2g. s2g.') | dados.includes('a. sm.') | dados.includes('s2g. a2g.') | dados.includes('sm. a.') | dados.includes('a.sm.') | dados.includes('a2g.s2g.') | dados.includes('a2g. sm.') | dados.includes('smpl.') | dados.includes('sm. sf.') | dados.includes('a2g. s2g. sf.') | dados.includes('sm2n.') | dados.includes('sfpl.') | dados.includes('s2g2n.') | dados.includes('a2g2n. sm2n.')| dados.includes('sf2n.') | dados.includes('a2g. s2g. sm.') | dados.includes('sm') | dados.includes('a2g2n. s2g.2n.') | dados.includes('s2g2n. a2g2n.') | dados.includes('s2g. sm.')) {
-
-        dados_palavra['Classe'].push('substantivo')
-
-    }
-    if (dados.includes('interj.') | dados.includes('Interj.')) {
-
-        dados_palavra['Classe'].push('interjeição')
-
-    }
-    if (dados.includes('adv.')) {
-
-        dados_palavra['Classe'].push('advérbio')
-
-    }
-    if (dados.includes('pr.indef.') | dados.includes('Pr.indef.') | dados.includes('pr.dem.') | dados.includes('pr.rel.') | dados.includes('pr.pess.') | dados.includes('pr.poss.')) {
-
-        dados_palavra['Classe'].push('pronome')
-
-    }
-    if (dados.includes('num.')) {
-
-        dados_palavra['Classe'].push('numeral')
-
-    } 
-    if (dados.includes('conj.') | dados.includes('Conj.') | dados.includes('conj.conces.') | dados.includes('conj.concl.') | dados.includes('conj.comp.') | dados.includes('conj.caus.') | dados.includes('conj.conf.') | dados.includes('conj.adit.') | dados.includes('conj.advers.') | dados.includes('conj.temp.') | dados.includes('conj.condic.') | dados.includes('conj.expl.') | dados.includes('conj.prop.') | dados.includes('conj.alter.') | dados.includes('conj.fin.')) {
-
-        dados_palavra['Classe'].push('conjunção')
-
-    }
-    if (dados.includes('prep.') | dados.includes('Prep.')) {
-
-        dados_palavra['Classe'].push('preposição')
-
-    }
-    if (dados.includes('art.') | dados.includes('art.indef.') | dados.includes('art.def.')) {
-
-        dados_palavra['Classe'].push('artigo')
-
-    }
+            } else if (/\binterj\./.test(dados)) {
+                dados_palavra['Classe'].push('interjeição')
+        
+            } else if (/\bprep\./.test(dados)) {
+                dados_palavra['Classe'].push('preposição')
+        
+            } else if (/\bconj\./.test(dados)) {
+                dados_palavra['Classe'].push('conjunção')
+        
+            } else if (/\bart\./.test(dados)) {
+                dados_palavra['Classe'].push('artigo')
+            }
 
     return dados_palavra
 

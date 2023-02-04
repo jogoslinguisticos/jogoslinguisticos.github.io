@@ -245,7 +245,7 @@ function checar() {
 
         }
 
-        console.log('tamanho da base de checar: '+lista_palavras_total.length)
+        
 
     })
 

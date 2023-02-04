@@ -199,7 +199,7 @@ function checar() {
 
             acertos += 1;
             
-            let dados_palavra = tratar_dados(dados.classe)
+            let dados_palavra = tratar_dados(dados)
 
 
             document.getElementById("acertos_cell").innerHTML = 'Encontradas: <mark>'+acertos+'</mark>'

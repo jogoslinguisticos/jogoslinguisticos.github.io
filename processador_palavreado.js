@@ -1,14 +1,15 @@
 
-
-
-
 onmessage = function(message) {
 
-    fetch('./base_mobile_2.json').then((resp) => {return resp.json()}).then((a) => {
+    fetch('./base_palavras_mobile.json').then((resp) => {return resp.json()}).then((a) => {
 
         let verificadas = 0;
     
-        let base_palavras_mobile = a.map(i => i.palavra)
+        //let base_palavras_mobile = a.map(i => i.palavra)
+
+        let base_palavras_mobile = Object.keys(a)
+
+        console.log('tamanho da base: '+base_palavras_mobile.length)
 
         lista_palavras_possiveis = []
 
@@ -51,11 +52,9 @@ onmessage = function(message) {
 
         }
 
-
-
         lista_palavras_possiveis = Array.from(new Set(lista_palavras_possiveis))
 
-        console.log(verificadas)
+        //console.log(verificadas)
 
         postMessage(lista_palavras_possiveis)
     

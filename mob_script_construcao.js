@@ -1,4 +1,4 @@
-var lista_palavras_total = []
+//var lista_palavras_total = []
 
 var lista_silabas_total = []
 
@@ -11,7 +11,7 @@ let dicas_possiveis = []
 let opcoes_silabas = document.getElementsByClassName("mover_square")
 
 let palavras_corretas = []
-
+ 
 let acertos = 0;
 let erros = 0;
 let dicas = 0;
@@ -35,7 +35,6 @@ processador.onmessage = function(message) {
 
         lista_palavras_possiveis.push(ele)
         dicas_possiveis.push(ele)
-        console.log('palavra adicionada: '+ele)
 
     })
 
@@ -49,9 +48,12 @@ window.onload = function () {
 
     document.getElementById("acertos_cell").innerHTML = 'Encontradas: <mark>'+acertos+'</mark>'
 
-    lista_palavras_total = base_palavras_mobile.map(i => i.palavra)
 
 
+    //lista_palavras_total = base_palavras_mobile.map(i => i.palavra)
+
+
+    //Popular os quadrinhos com sílabas
     Array.from(opcoes_silabas).slice(0, 6).forEach(element => {
 
         let silaba_nova = top50[Math.floor(Math.random() * top50.length)];
@@ -95,10 +97,8 @@ window.onload = function () {
 
     //console.log('quantas silabas: '+lista_silabas_rodada.length)
 
+    //Envia para o webworker as sílabas sorteadas
     processador.postMessage(lista_silabas_rodada)
-
-    console.log('mensagem enviada: '+lista_silabas_rodada.length)
-
 
 };
 
@@ -186,59 +186,70 @@ function checar() {
 
     let palavra_resultante = palavra_parcial.join("")
 
-    //Checar se existe
-    if (lista_palavras_total.includes(palavra_resultante) && palavras_corretas.includes(palavra_resultante) === false) {
+    fetch('./base_palavras_mobile.json').then((resp) => {return resp.json()}).then((a) => {
 
-        palavras_corretas.push(palavra_resultante)
+        let lista_palavras_total = Object.keys(a)
 
-        let dados = base_palavras_mobile.find(i => i.palavra === palavra_resultante)
+            //Checar se existe
+        if (lista_palavras_total.includes(palavra_resultante) && palavras_corretas.includes(palavra_resultante) === false) {
 
-        acertos += 1;
-        
-        let dados_palavra = tratar_dados(dados.classe)
+            palavras_corretas.push(palavra_resultante)
+
+            let dados = base_palavras_mobile.find(i => i.palavra === palavra_resultante)
+
+            acertos += 1;
+            
+            let dados_palavra = tratar_dados(dados.classe)
 
 
-        document.getElementById("acertos_cell").innerHTML = 'Encontradas: <mark>'+acertos+'</mark>'
+            document.getElementById("acertos_cell").innerHTML = 'Encontradas: <mark>'+acertos+'</mark>'
 
-        
+            
 
-        if (dados_palavra['Classe'].length === 1) {
+            if (dados_palavra['Classe'].length === 1) {
 
-            if (dados_palavra['Classe'][0] === 'interjeição' | dados_palavra['Classe'][0] === 'conjunção') {
+                if (dados_palavra['Classe'][0] === 'interjeição' | dados_palavra['Classe'][0] === 'conjunção') {
 
-                document.getElementById("status").innerHTML = 'Correto! <mark>'+palavra_resultante+'</mark> pode ser uma '+dados_palavra['Classe']
+                    document.getElementById("status").innerHTML = 'Correto! <mark>'+palavra_resultante+'</mark> pode ser uma '+dados_palavra['Classe']
 
-            } else {
+                } else {
 
-                document.getElementById("status").innerHTML = 'Correto! <mark>'+palavra_resultante+'</mark> pode ser um '+dados_palavra['Classe']
+                    document.getElementById("status").innerHTML = 'Correto! <mark>'+palavra_resultante+'</mark> pode ser um '+dados_palavra['Classe']
 
+
+                }
+
+                
+            } else if (dados_palavra['Classe'].length > 1) {
+
+                
+
+                document.getElementById("status").innerHTML = 'Correto! <mark>'+palavra_resultante+'</mark> pode ser '+dados_palavra['Classe'].join(" ou ")
 
             }
 
-            
-        } else if (dados_palavra['Classe'].length > 1) {
+        
+        } else if (palavras_corretas.includes(palavra_resultante)) {
 
-            
+            document.getElementById("status").innerHTML = 'A palavra <mark>'+palavra_resultante+'</mark> já foi computada.'
 
-            document.getElementById("status").innerHTML = 'Correto! <mark>'+palavra_resultante+'</mark> pode ser '+dados_palavra['Classe'].join(" ou ")
+        } else if (palavra_resultante === "") {
+
+            document.getElementById("status").innerHTML = "Nenhuma palavra foi formada ainda."
+
+        } else {
+            erros += 1;
+            //document.getElementById("erros").innerHTML = "Erros: "+erros
+            document.getElementById("status").innerHTML = 'Não conhecemos a palavra <mark>'+palavra_resultante+'</mark>.'
 
         }
 
+        console.log('tamanho da base de checar: '+lista_palavras_total.length)
+
+    })
+
     
-    } else if (palavras_corretas.includes(palavra_resultante)) {
 
-        document.getElementById("status").innerHTML = 'A palavra <mark>'+palavra_resultante+'</mark> já foi computada.'
-
-    } else if (palavra_resultante === "") {
-
-        document.getElementById("status").innerHTML = "Nenhuma palavra foi formada ainda."
-
-    } else {
-        erros += 1;
-        //document.getElementById("erros").innerHTML = "Erros: "+erros
-        document.getElementById("status").innerHTML = 'Não conhecemos a palavra <mark>'+palavra_resultante+'</mark>.'
-
-    }
 
 };
 

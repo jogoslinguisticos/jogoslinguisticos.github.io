@@ -196,13 +196,12 @@ function checar() {
             palavras_corretas.push(palavra_resultante)
 
             let dados = a.palavra_resultante
+            
+            console.log("dados da palavra: "+dados)
 
             acertos += 1;
             
             let dados_palavra = tratar_dados(dados)
-            
-            console.log(dados_palavra)
-
 
             document.getElementById("acertos_cell").innerHTML = 'Encontradas: <mark>'+acertos+'</mark>'
 

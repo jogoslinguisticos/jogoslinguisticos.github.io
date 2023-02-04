@@ -195,7 +195,7 @@ function checar() {
 
             palavras_corretas.push(palavra_resultante)
 
-            let dados = a.palavra_resultante
+            let dados = a[palavra_resultante]
             
             console.log("dados da palavra: "+dados)
 
@@ -263,35 +263,35 @@ function tratar_dados(dados) {
     }
 
     if (/\badj\./.test(dados)) {
-               dados_palavra['Classe'].push('adjetivo')
+        dados_palavra['Classe'].push('adjetivo')
 
-            } else if (/\bs\./.test(dados)) {
-                dados_palavra['Classe'].push('substantivo')
+    } else if (/\bs\./.test(dados)) {
+        dados_palavra['Classe'].push('substantivo')
 
-            } else if (/\bv\./.test(dados)) {
-                dados_palavra['Classe'].push('verbo')
+    } else if (/\bv\./.test(dados)) {
+        dados_palavra['Classe'].push('verbo')
                 
-            } else if (/\badv\./.test(dados)) {
-                dados_palavra['Classe'].push('advérbio')
+    } else if (/\badv\./.test(dados)) {
+        dados_palavra['Classe'].push('advérbio')
         
-            } else if (/\bnum\./.test(dados)) {
-                dados_palavra['Classe'].push('numeral')
+    } else if (/\bnum\./.test(dados)) {
+        dados_palavra['Classe'].push('numeral')
         
-            } else if (/\bpron\./.test(dados)) {
-                dados_palavra['Classe'].push('pronome')
+    } else if (/\bpron\./.test(dados)) {
+        dados_palavra['Classe'].push('pronome')
 
-            } else if (/\binterj\./.test(dados)) {
-                dados_palavra['Classe'].push('interjeição')
+    } else if (/\binterj\./.test(dados)) {
+        dados_palavra['Classe'].push('interjeição')
         
-            } else if (/\bprep\./.test(dados)) {
-                dados_palavra['Classe'].push('preposição')
+    } else if (/\bprep\./.test(dados)) {
+        dados_palavra['Classe'].push('preposição')
         
-            } else if (/\bconj\./.test(dados)) {
-                dados_palavra['Classe'].push('conjunção')
+    } else if (/\bconj\./.test(dados)) {
+        dados_palavra['Classe'].push('conjunção')
         
-            } else if (/\bart\./.test(dados)) {
-                dados_palavra['Classe'].push('artigo')
-            }
+    } else if (/\bart\./.test(dados)) {
+        dados_palavra['Classe'].push('artigo')
+    }
 
     return dados_palavra
 
